@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+</head>
+
+
+<body>
+
+<h2> {{.Title}} </h2>
+
+<div>{{ .StoryParagraph }}</div>
+
+{{if .Options}}
+<hr/>
+<p>
+    <strong> What next? </strong>
+        <ul>
+            {{ range .Options }}
+                <a href="/?page={{.Arc}}">{{ .Text }}</a><br/>
+            {{ end }}
+        </ul>
+        {{else}}
+            <strong> Thank you for playing the game!</strong><br/>
+            <a href="/"> Restart </a>
+        {{end}}
+</p>
+
+</body>
+
+</html>
